@@ -12,6 +12,18 @@ import me.kalriz.lsdn.factory.PropertyFactory;
 
 public class Logger {
 
+	public static String test(String message, String sender)
+			throws AttributeNotFoundException, FileNotFoundException, IOException {
+		var loggerProperties = (LoggerProperties) PropertyFactory.create("logger");
+		SimpleDateFormat formatter = new SimpleDateFormat(loggerProperties.getFormat());
+
+		String logMessage = "[TEST] " + formatter.format(new Date()) + " :: " + sender + " >> " + message;
+
+		System.out.println(logMessage);
+
+		return logMessage;
+	}
+	
 	public static String debug(String message, String sender)
 			throws AttributeNotFoundException, FileNotFoundException, IOException {
 		var loggerProperties = (LoggerProperties) PropertyFactory.create("logger");
