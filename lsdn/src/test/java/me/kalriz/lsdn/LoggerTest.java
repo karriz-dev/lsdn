@@ -17,7 +17,7 @@ public class LoggerTest {
 	, FileNotFoundException
 	, IOException
 	{
-		assertTrue(Logger.debug("debug test", this.getClass().getName()).contains("[DEBUG]"));
+		assertTrue(Logger.debug("debug test", this.getClass().getName()).contains("[TEST]"));
 	}
 	
 	@Test
