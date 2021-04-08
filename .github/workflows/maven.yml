@@ -44,6 +44,7 @@ jobs:
           git init
           git add -A
           git commit -m "Auto generated JaCoCo coverage badge"
+          git remote add origin "https://github.com/ldh1428a/lsdn.git"
           git push -u origin ${GITHUB_BASE_REF}
         fi
 
