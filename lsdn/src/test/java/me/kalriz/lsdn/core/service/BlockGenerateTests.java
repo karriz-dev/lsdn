@@ -19,8 +19,6 @@ public class BlockGenerateTests
 	@Test
 	public void generateBlockTest()
 	{
-		Block b = blockGenerateService.generate();
 		
-		System.out.println(b.toString());
 	}
 }

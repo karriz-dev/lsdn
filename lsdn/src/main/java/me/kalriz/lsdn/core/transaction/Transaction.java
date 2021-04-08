@@ -28,4 +28,6 @@ public abstract class Transaction
 	protected String value = null;
 
 	protected Map<String, String> data = null;
+	
+	protected String signature = null;
 }
