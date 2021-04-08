@@ -1,0 +1,17 @@
+language: java
+
+jdk:
+  - openjdk11
+
+script:
+ - cd lsdn
+ - mvn -B test
+ 
+branches:
+  only:
+    - master
+
+notifications:
+  email:
+    recipients:
+      - kalee@kalriz.me
