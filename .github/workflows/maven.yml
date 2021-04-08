@@ -36,13 +36,15 @@ jobs:
         
     - name: Commit the badge (if it changed)
       run: |
+        echo "${GITHUB_HEAD_REF}"
+        echo "${GITHUB_BASE_REF}"
         if [[ `git status --porcelain` ]]; then
           git config --global user.name 'DongHyun KAL LEE'
           git config --global user.email 'ldh1428a@sogang.ac.kr'
           git init
           git add -A
           git commit -m "Auto generated JaCoCo coverage badge"
-          git push -u origin ${GITHUB_HEAD_REF}
+          git push -u origin ${GITHUB_BASE_REF}
         fi
 
     - name: Upload JaCoCo coverage report
