@@ -5,7 +5,7 @@ jdk:
 
 script:
  - cd lsdn
- - mvn -B test
+ - mvn -B test jacoco:report coveralls:report -DskipTests=false -Dmaven.test.failure.ignore=true
  
 branches:
   only:
