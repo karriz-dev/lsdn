@@ -5,6 +5,7 @@ jdk:
 
 script:
  - cd lsdn
+ - mvn -B test
  
 branches:
   only:
