@@ -2,6 +2,9 @@ language: java
 jdk:
   - openjdk11
 
+before_install:
+  - chmod +x mvn
+  
 branches:
   only:
     - master
@@ -11,8 +14,12 @@ cache:
   directories:
     - $HOME/.m2
 
+# mvn -B test
+script: mvn -B test
+
+
 # CI 실행 완료시 메일로 알람
 notifications:
   email:
     recipients:
-      - your@Email.com
+      - kalee@kalriz.me
