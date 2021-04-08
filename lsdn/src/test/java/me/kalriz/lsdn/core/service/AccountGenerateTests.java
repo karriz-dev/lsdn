@@ -35,7 +35,7 @@ public class AccountGenerateTests
 	}
 	
 	@DisplayName("Test private convert")
-	@Test
+	@RepeatedTest(value = 1000, name = "{displayName}, {currentRepetition}/{totalRepetitions}")
 	public void accountPrivateKeyConvertTest()
 	{
 		Account a = accountGenerateService.generate();
@@ -48,7 +48,7 @@ public class AccountGenerateTests
 	}
 	
 	@DisplayName("Test publickey convert")
-	@RepeatedTest(value = 10, name = "{displayName}, {currentRepetitions}/{totalRepetitions}")
+	@RepeatedTest(value = 1000, name = "{displayName}, {currentRepetition}/{totalRepetitions}")
 	public void accountPublicKeyConvertTest()
 	{
 		Account a = accountGenerateService.generate();

@@ -20,7 +20,7 @@ public class Exchanger
 
 	public static String publicKeyToString(ECPublicKey publicKey)
 	{
-		return publicKey.getW().getAffineX().toString(16)
+		return publicKey.getW().getAffineX().toString(16) + ":"
 				+ publicKey.getW().getAffineY().toString(16);
 	}
 
@@ -60,10 +60,11 @@ public class Exchanger
 			ECParameterSpec ecParameters = parameters
 					.getParameterSpec(ECParameterSpec.class);
 
-			BigInteger px = new BigInteger(publicKey.substring(0, 64), 16);
-			BigInteger py = new BigInteger(
-					publicKey.substring(64, publicKey.length()), 16);
+			String[] pkSplit = publicKey.split(":");
 
+			BigInteger px = new BigInteger(pkSplit[0], 16);
+			BigInteger py = new BigInteger(pkSplit[1], 16);
+			
 			ECPoint pubPoint = new ECPoint(px, py);
 
 			ECPublicKeySpec pubSpec = new ECPublicKeySpec(pubPoint,
