@@ -42,7 +42,6 @@ jobs:
           git init
           git add -A
           git commit -m "Auto generated JaCoCo coverage badge"
-          git remote add origin ${GITHUB_HEAD_REF}
           git push -u origin ${GITHUB_HEAD_REF}
         fi
 
